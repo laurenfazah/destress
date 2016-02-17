@@ -94,9 +94,17 @@ $(function(){
         startVideo();
     }
 
-    // next button
+    function lastVideo(){
+        count--;
+        startVideo();
+    }
+
     $('.next').click(function(){
         nextVideo();
+    });
+
+    $('.last').click(function(){
+        lastVideo();
     });
 
     // start with first
