@@ -87,6 +87,7 @@ $(function(){
 
     function startVideo(){
         iframe.attr("src", videos[count].link);
+        updateInfo();
         play();
     }
 
@@ -103,6 +104,18 @@ $(function(){
     function lastVideo(){
         count--;
         startVideo();
+    }
+
+    function updateInfo(){
+        $('.info p').removeClass('fade-in');
+
+        setTimeout(function() {
+            $('.info p').addClass('fade-in');
+        }, 500);
+
+        setTimeout(function() {
+            $('.info p').removeClass('fade-in');
+        }, 3000);
     }
 
     function init(){

@@ -1,0 +1,15 @@
+.info{
+    @extend %absolute-middle;
+    top: 45%;
+    p{
+        @extend %default-transition;
+        opacity: 0;
+        color: $light;
+        text-align: center;
+        font-size: 500%;
+        margin-bottom: 20px;
+        &.fade-in{
+            opacity: 1;
+        }
+    }
+}
