@@ -114,9 +114,9 @@ $(function(){
     function updateInfo(){
         $('.title').text(videos[count].title);
         $('.artist').text("By: " + videos[count].artist);
-        $('.time').text("Can you spare " + videos[count].length + "?");
+        $('.time').text("Time you'll need: " + videos[count].length);
 
-        $(infoCards).addClass('fade-in').delay(3000).queue(function(next){
+        $(infoCards).addClass('fade-in').delay(4000).queue(function(next){
             $(this).removeClass("fade-in");
             next();
         });
