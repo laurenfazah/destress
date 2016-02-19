@@ -1,15 +1,23 @@
-.info{
-    @extend %absolute-middle;
-    top: 45%;
-    p{
-        @extend %default-transition;
-        opacity: 0;
-        color: $light;
-        text-align: center;
-        font-size: 500%;
-        margin-bottom: 20px;
-        &.fade-in{
-            opacity: 1;
+.info-container{
+    @include position(absolute, 0px auto auto 0px);
+    @include size(100%);
+    @extend %default-transition;
+    &.fade-in{
+        background-color: rgba($dark, .5);
+    }
+    .info{
+        @extend %absolute-middle;
+        top: 45%;
+        p{
+            @extend %default-transition;
+            opacity: 0;
+            color: $light;
+            text-align: center;
+            font-size: 500%;
+            margin-bottom: 20px;
+            &.fade-in{
+                opacity: 1;
+            }
         }
     }
 }

@@ -92,6 +92,7 @@ $(function(){
     }
 
     function nextVideo(){
+        $('.info p, .info-container').removeClass('fade-in');
         if (shuffle === false) {
             count++;
         } else {
@@ -107,15 +108,11 @@ $(function(){
     }
 
     function updateInfo(){
-        $('.info p').removeClass('fade-in');
+        $('.info p, .info-container').addClass('fade-in');
 
         setTimeout(function() {
-            $('.info p').addClass('fade-in');
-        }, 500);
-
-        setTimeout(function() {
-            $('.info p').removeClass('fade-in');
-        }, 3000);
+            $('.info p, .info-container').removeClass('fade-in');
+        }, 4000);
     }
 
     function init(){
