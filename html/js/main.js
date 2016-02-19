@@ -95,6 +95,9 @@ $(function(){
         $('.info p, .info-container').removeClass('fade-in');
         if (shuffle === false) {
             count++;
+            if (count === videos.length){
+                count = 0;
+            }
         } else {
             count = Math.floor(Math.random() * videos.length);
         }
