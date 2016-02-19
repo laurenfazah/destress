@@ -1,3 +1,5 @@
 .video-container{
     @include size(100%);
+    position: relative;
+    z-index: 1;
 }

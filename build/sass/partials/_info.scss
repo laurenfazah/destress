@@ -2,8 +2,10 @@
     @include position(absolute, 0px auto auto 0px);
     @include size(100%);
     @extend %default-transition;
+    z-index: -1;
     &.fade-in{
         background-color: rgba($dark, .5);
+        z-index: 99;
     }
     .info{
         @extend %absolute-middle;

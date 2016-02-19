@@ -56,7 +56,8 @@ $(function(){
         count = 0,
         videoInPlay = videos[count],
         shuffle = false,
-        linear = true;
+        linear = true,
+        infoCards = '.info p, .info-container';
 
     // when the player is ready, add listeners
     player.addEvent('ready', function(){
@@ -92,7 +93,7 @@ $(function(){
     }
 
     function nextVideo(){
-        $('.info p, .info-container').removeClass('fade-in');
+        $(infoCards).removeClass('fade-in');
         if (shuffle === false) {
             count++;
             if (count === videos.length){
@@ -111,11 +112,14 @@ $(function(){
     }
 
     function updateInfo(){
-        $('.info p, .info-container').addClass('fade-in');
+        $('.title').text(videos[count].title);
+        $('.artist').text("By: " + videos[count].artist);
+        $('.time').text("Can you spare " + videos[count].length + "?");
 
-        setTimeout(function() {
-            $('.info p, .info-container').removeClass('fade-in');
-        }, 4000);
+        $(infoCards).addClass('fade-in').delay(3000).queue(function(next){
+            $(this).removeClass("fade-in");
+            next();
+        });
     }
 
     function init(){
