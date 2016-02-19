@@ -38,7 +38,7 @@ var videos = [ {
     artist: "Broad City",
     link: "https://player.vimeo.com/video/31677652?api=1&player_id=player1",
     length: "3:56"
-} ];
+} ], shuffle = !1, linear = !0;
 
 $(function() {
     function onFinish(id) {
@@ -59,6 +59,9 @@ $(function() {
     function lastVideo() {
         count--, startVideo();
     }
+    function init() {
+        startVideo();
+    }
     var iframe = $("#player1"), player = $f(iframe[0]), count = 0;
     videos[count];
     player.addEvent("ready", function() {
@@ -67,5 +70,5 @@ $(function() {
         nextVideo();
     }), $(".last").click(function() {
         lastVideo();
-    }), startVideo();
+    }), init();
 });

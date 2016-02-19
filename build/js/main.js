@@ -47,7 +47,9 @@ var videos = [
         link: "https://player.vimeo.com/video/31677652?api=1&player_id=player1",
         length: "3:56"
     }
-];
+],
+shuffle = false,
+linear = true;
 
 $(function(){
 
@@ -99,6 +101,14 @@ $(function(){
         startVideo();
     }
 
+    function init(){
+        startVideo();
+    }
+
+    //*///////////////////////////////////////////
+    // video functions
+    ///////////////////////////////////////////*//
+
     $('.next').click(function(){
         nextVideo();
     });
@@ -107,7 +117,8 @@ $(function(){
         lastVideo();
     });
 
-    // start with first
-    startVideo();
+
+    //init
+    init();
 });
 

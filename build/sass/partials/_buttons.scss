@@ -39,4 +39,7 @@
             }
         }
     }
+    &.onoffswitch{
+        @include position(absolute, auto 20px 10% auto);
+    }
 }
