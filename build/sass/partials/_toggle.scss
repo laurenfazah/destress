@@ -21,7 +21,7 @@
 .onoffswitch-inner:before {
     content: "SHUFFLE ON";
     padding-left: 10px;
-    background-color: #34A7C1; color: #FFFFFF;
+    background-color: $primary; color: #FFFFFF;
 }
 .onoffswitch-inner:after {
     content: "SHUFFLE OFF";

@@ -47,16 +47,16 @@ var videos = [
         link: "https://player.vimeo.com/video/31677652?api=1&player_id=player1",
         length: "3:56"
     }
-],
-shuffle = false,
-linear = true;
+];
 
 $(function(){
 
     var iframe = $('#player1'),
         player = $f(iframe[0]),
         count = 0,
-        videoInPlay = videos[count];
+        videoInPlay = videos[count],
+        shuffle = false,
+        linear = true;
 
     // when the player is ready, add listeners
     player.addEvent('ready', function(){
@@ -76,9 +76,9 @@ $(function(){
     }
 
     function frameListen(data, id){
-        if (data.seconds < date1.endTime){
+        // if (data.seconds){
 
-        }
+        // }
     }
 
     function play(){
@@ -91,8 +91,12 @@ $(function(){
     }
 
     function nextVideo(){
-        count++;
-        console.log(videos[count].link);
+        if (shuffle === false) {
+            count++;
+        } else {
+            count = Math.floor(Math.random() * videos.length);
+        }
+        console.log(count);
         startVideo();
     }
 
@@ -105,8 +109,9 @@ $(function(){
         startVideo();
     }
 
+
     //*///////////////////////////////////////////
-    // video functions
+    // button functions
     ///////////////////////////////////////////*//
 
     $('.next').click(function(){
@@ -117,8 +122,19 @@ $(function(){
         lastVideo();
     });
 
+    $('#myonoffswitch').click(function(){
+        if ($(this.checked)[0]===true) {
+            shuffle = true;
+        } else {
+            shuffle = false;
+        }
+    });
 
-    //init
+
+    //*///////////////////////////////////////////
+    // app functions
+    ///////////////////////////////////////////*//
+
     init();
 });
 
