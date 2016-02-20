@@ -4,8 +4,7 @@
     @extend %default-transition;
     z-index: -1;
     &.fade-in{
-        // background-color: rgba($dark, .5);
-        @include background(linear-gradient(50deg, $primary-light, $primary-dark));
+        @include background(linear-gradient(50deg, rgba($primary-light, .5), rgba($primary-dark,.5)));
         z-index: 99;
     }
     .info{
@@ -22,6 +21,26 @@
             &.fade-in{
                 opacity: 1;
             }
+            &.category, &.time{
+                font-size: 250%;
+                // display: inline-block;
+                margin: 10px auto;
+            }
+            &.category{
+                // float: left;
+            }
+            &.time{
+                // float: right;
+            }
+            .constant{
+                font-style: italic;
+                margin-right: 10px;
+                font-family: $font-sans;
+            }
+        }
+        .meta{
+            width: 100%;
+            margin-top: 30px;
         }
     }
 }
