@@ -1,0 +1,31 @@
+footer{
+    @include size(100% 60px);
+    background: rgba($primary, .9);
+    padding: 10px;
+    @include position(absolute, auto auto 0px 0px);
+    font-family: $font-sans;
+    z-index: 99;
+    a{
+        text-decoration: none;
+    }
+    p{
+        color: $light;
+        text-align: left;
+        font-weight: 700;
+        font-size: 140%;
+        margin-top: 5px;
+    }
+}
+
+.click-thru {
+    position: relative;
+    span{
+        @extend %default-transition;
+        @include position(relative, auto 0px auto auto);
+    }
+    &:hover{
+        span{
+            @include position(relative, auto -10px auto auto);
+        }
+    }
+}

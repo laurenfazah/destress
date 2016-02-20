@@ -219,8 +219,10 @@ $(function(){
     }
 
     function lastVideo(){
-        count--;
-        startVideo();
+        if (count !== 0) {
+            count--;
+            startVideo();
+        }
     }
 
     function updateInfo(){
@@ -260,6 +262,7 @@ $(function(){
     $(infoCards).click(function(){
         $(this).removeClass('fade-in');
         player.api('play');
+        $('.next, .last').addClass('playing');
     });
 
     // var timeout = null;
