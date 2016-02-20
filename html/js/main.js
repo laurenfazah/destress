@@ -71,7 +71,6 @@ $(function(){
         $('.interactive-img').css('display','block');
     }
 
-    // jumps to appropriate time on video for timeline
     function jumpTo(time){
         player.api('seekTo', time);
     }
@@ -146,6 +145,18 @@ $(function(){
             shuffle = false;
         }
     });
+
+    var timeout = null;
+
+    // $(document).on('mousemove', function() {
+    //     clearTimeout(timeout);
+
+    //     $('.next, .last').removeClass('mouse-still');
+
+    //     timeout = setTimeout(function() {
+    //         $('.next, .last').addClass('mouse-still');
+    //     }, 3000);
+    // });
 
 
     //*///////////////////////////////////////////

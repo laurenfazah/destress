@@ -6,6 +6,8 @@
 @import "compass/css3";
 @import "bourbon/bourbon";
 @import "neat/neat";
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
 
 /*//////////////////////////////////////
 //  colors
@@ -18,13 +20,16 @@ $linkedin: #3574af;
 
 $light:#fff;
 $dark: #333;
-$primary: #00B2EA;
+$primary: #cca9a9;
+$primary-light: #7fcacc;
+$primary-dark: #45536b;
 
 /*//////////////////////////////////////
 //  fonts
 //////////////////////////////////////*/
-$font-sans: $helvetica;
+$font-sans: 'Oswald', sans-serif;;
 $font-serif: 'Crimson Sans', $georgia;
+$font-fun: 'Shadows Into Light', cursive;
 
 h1,h2,h3,h4,h5,h6{
     font-weight:700;
@@ -76,7 +81,7 @@ button,input[type="submit"]{
     &:-moz-placeholder { @content; }
     &::-moz-placeholder { @content; }
     &:-ms-input-placeholder { @content; }
-    &::-webkit-input-placeholder { @content; } 
+    &::-webkit-input-placeholder { @content; }
 }
 
 

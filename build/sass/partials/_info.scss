@@ -4,7 +4,8 @@
     @extend %default-transition;
     z-index: -1;
     &.fade-in{
-        background-color: rgba($dark, .5);
+        // background-color: rgba($dark, .5);
+        @include background(linear-gradient(50deg, $primary-light, $primary-dark));
         z-index: 99;
     }
     .info{
@@ -12,6 +13,7 @@
         top: 45%;
         p{
             @extend %default-transition;
+            font-family: $font-fun;
             opacity: 0;
             color: $light;
             text-align: center;
