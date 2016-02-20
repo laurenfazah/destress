@@ -14,7 +14,7 @@ var videos = [
         category: "stunning classical"
     },
     {
-        title: "THE RIDGE (*a lauren favorite*)",
+        title: "THE RIDGE",
         artist: "Danny Macaskill",
         link: "https://player.vimeo.com/video/125896742?api=1&player_id=player1",
         length: "6:45",
