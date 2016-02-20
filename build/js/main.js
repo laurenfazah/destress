@@ -229,10 +229,7 @@ $(function(){
         $('.category').html("<span class='constant'>category:<\/span> " + videos[count].category);
         $('.time').html("<span class='constant'>time you'll need:<\/span> " + videos[count].length);
 
-        $(infoCards).addClass('fade-in').delay(4000).queue(function(next){
-            $(this).removeClass("fade-in");
-            next();
-        });
+        $(infoCards).addClass('fade-in');
     }
 
     function init(){
@@ -241,7 +238,7 @@ $(function(){
 
 
     //*///////////////////////////////////////////
-    // button functions
+    // click functions
     ///////////////////////////////////////////*//
 
     $('.next').click(function(){
@@ -260,7 +257,12 @@ $(function(){
         }
     });
 
-    var timeout = null;
+    $(infoCards).click(function(){
+        $(this).removeClass('fade-in');
+        player.api('play');
+    });
+
+    // var timeout = null;
 
     // $(document).on('mousemove', function() {
     //     clearTimeout(timeout);

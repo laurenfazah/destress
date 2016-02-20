@@ -4,7 +4,7 @@
     @extend %default-transition;
     z-index: -1;
     &.fade-in{
-        @include background(linear-gradient(50deg, rgba($primary-light, .5), rgba($primary-dark,.5)));
+        @include background(linear-gradient(50deg, rgba($primary-light, .8), rgba($primary-dark,.8)));
         z-index: 99;
     }
     .info{
