@@ -1,18 +1,19 @@
 footer{
-    @include size(100% 60px);
+    @include size(100% 40px);
+    @extend %default-transition;
     background: rgba($primary, .9);
-    padding: 10px;
     @include position(absolute, auto auto 0px 0px);
     font-family: $font-sans;
     z-index: 99;
+    padding: 5px 10px;
     a{
         text-decoration: none;
     }
     p{
         color: $light;
         text-align: left;
-        font-weight: 700;
-        font-size: 140%;
+        font-weight: 200;
+        font-size: 80%;
         margin-top: 5px;
     }
 }
@@ -26,6 +27,16 @@ footer{
     &:hover{
         span{
             @include position(relative, auto -10px auto auto);
+        }
+    }
+}
+
+@media all and(min-width: 800px){
+    footer{
+        padding: 10px;
+        @include size(100% 60px);
+        p{
+            font-size: 140%;
         }
     }
 }

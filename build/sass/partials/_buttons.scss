@@ -1,65 +1,97 @@
 .button{
     z-index: 9999;
     cursor: pointer;
-    &.next{
-        @include size(100px);
-        @include position(absolute, 40% 0px auto auto);
+    &.next, &.last{
+        @include size(30px);
         &:before{
             content:" ";
             display:block;
-            @include triangle(100px, rgba($primary, .4), right);
+            @include transition(all .3s ease-in-out);
+        }
+    }
+    &.next{
+        @include position(absolute, 40% 0px auto auto);
+        &:before{
+            @include triangle(30px, rgba($primary, .4), right);
             @include position(absolute, 50% 25% auto auto);
             @include transform(translateX(50%) translateY(-50%) scale(1.75,1));
-            @include transition(all .3s ease-in-out);
             margin-left:1.5em;
             margin-top:.05em;
         }
-        &:hover{
+        &.playing{
             &:before{
-                @include triangle(110px, rgba($primary, .8), right);
+                @include triangle(30px, rgba($primary, .2), right);
             }
+        }
+    }
+    &.last{
+        @include position(absolute, 40% auto auto 0px);
+        &:before{
+            @include triangle(30px, rgba($primary, .4), left);
+            @include position(absolute, 50% auto auto 0px);
+            @include transform(translateX(-50%) translateY(-50%) scale(1.75,1));
+            margin-left:1.5em;
+            margin-top:.05em;
         }
         &.playing{
             &:before{
-                @include triangle(100px, rgba($primary, .2), right);
+                @include triangle(30px, rgba($primary, .2), left);
+            }
+        }
+    }
+    &.onoffswitch{
+        @include position(absolute, auto 20px 15% auto);
+    }
+}
+
+@media all and(min-width: 800px){
+    .button{
+        &.next, &.last{
+            @include size(100px);
+        }
+        &.next{
+            &:before{
+                @include triangle(100px, rgba($primary, .4), right);
             }
             &:hover{
                 &:before{
                     @include triangle(110px, rgba($primary, .8), right);
                 }
             }
-        }
-    }
-    &.last{
-        @include size(100px);
-        @include position(absolute, 40% auto auto 0px);
-        &:before{
-            content:" ";
-            display:block;
-            @include triangle(100px, rgba($primary, .4), left);
-            @include position(absolute, 50% auto auto 0px);
-            @include transform(translateX(-50%) translateY(-50%) scale(1.75,1));
-            @include transition(all .3s ease-in-out);
-            margin-left:1.5em;
-            margin-top:.05em;
-        }
-        &:hover{
-            &:before{
-                @include triangle(110px, rgba($primary, .8), left);
+            &.playing{
+                &:before{
+                    @include triangle(100px, rgba($primary, .2), right);
+                }
+                &:hover{
+                    &:before{
+                        @include triangle(110px, rgba($primary, .8), right);
+                    }
+                }
             }
         }
-        &.playing{
+        &.last{
+            @include position(absolute, 40% auto auto 0px);
             &:before{
-                @include triangle(100px, rgba($primary, .2), left);
+                @include triangle(100px, rgba($primary, .4), left);
             }
             &:hover{
                 &:before{
                     @include triangle(110px, rgba($primary, .8), left);
                 }
             }
+            &.playing{
+                &:before{
+                    @include triangle(100px, rgba($primary, .2), left);
+                }
+                &:hover{
+                    &:before{
+                        @include triangle(110px, rgba($primary, .8), left);
+                    }
+                }
+            }
         }
-    }
-    &.onoffswitch{
-        @include position(absolute, auto 20px 10% auto);
+        &.onoffswitch{
+            @include position(absolute, auto 20px 10% auto);
+        }
     }
 }
