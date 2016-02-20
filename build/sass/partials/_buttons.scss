@@ -7,7 +7,7 @@
         &:before{
             content:" ";
             display:block;
-            @include triangle(100px, rgba($primary, .2), right);
+            @include triangle(100px, rgba($primary, .3), right);
             @include position(absolute, 50% 25% auto auto);
             @include transform(translateX(50%) translateY(-50%) scale(1.75,1));
             @include transition(all .3s ease-in-out);
@@ -16,7 +16,7 @@
         }
         &:hover{
             &:before{
-                @include triangle(110px, rgba($primary, .9), right);
+                @include triangle(110px, rgba($primary, .8), right);
             }
         }
         &.mouse-still{
@@ -40,7 +40,7 @@
         }
         &:hover{
             &:before{
-                @include triangle(110px, rgba($primary, .9), left);
+                @include triangle(110px, rgba($primary, .8), left);
             }
         }
         &.mouse-still{

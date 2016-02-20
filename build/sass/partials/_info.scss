@@ -23,8 +23,8 @@
             }
             &.category, &.time{
                 font-size: 250%;
-                // display: inline-block;
                 margin: 10px auto;
+                // display: inline-block;
             }
             &.category{
                 // float: left;
@@ -36,6 +36,7 @@
                 font-style: italic;
                 margin-right: 10px;
                 font-family: $font-sans;
+                color: $primary;
             }
         }
         .meta{
