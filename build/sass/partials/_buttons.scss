@@ -4,6 +4,7 @@
     &.next, &.last{
         @include size(30px);
         &:before{
+            @include size(30px);
             content:" ";
             display:block;
             @include transition(all .3s ease-in-out);
@@ -13,10 +14,8 @@
         @include position(absolute, 40% 0px auto auto);
         &:before{
             @include triangle(30px, rgba($primary, .4), right);
-            @include position(absolute, 50% 25% auto auto);
+            @include position(absolute, 0px 0px auto -100%);
             @include transform(translateX(50%) translateY(-50%) scale(1.75,1));
-            margin-left:1.5em;
-            margin-top:.05em;
         }
         &.playing{
             &:before{
@@ -28,10 +27,8 @@
         @include position(absolute, 40% auto auto 0px);
         &:before{
             @include triangle(30px, rgba($primary, .4), left);
-            @include position(absolute, 50% auto auto 0px);
+            @include position(absolute, 0px auto auto 100%);
             @include transform(translateX(-50%) translateY(-50%) scale(1.75,1));
-            margin-left:1.5em;
-            margin-top:.05em;
         }
         &.playing{
             &:before{
@@ -48,6 +45,9 @@
     .button{
         &.next, &.last{
             @include size(100px);
+            &:before{
+                width: 100px;
+            }
         }
         &.next{
             &:before{
@@ -70,7 +70,6 @@
             }
         }
         &.last{
-            @include position(absolute, 40% auto auto 0px);
             &:before{
                 @include triangle(100px, rgba($primary, .4), left);
             }

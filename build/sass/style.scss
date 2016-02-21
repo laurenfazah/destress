@@ -6,3 +6,6 @@
 @import 'partials/toggle';
 @import 'partials/footer';
 
+body, html {
+    @include size(100%);
+}
